@@ -14,10 +14,16 @@ public class StopWatch : MonoBehaviour
     [SerializeField] Text stopWatchText;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        timer = 0;
+
+    void Awake(){
+      DontDestroyOnLoad(transform.gameObject);
+      timer = 0;
     }
+
+    // void Start()
+    // {
+    //
+    // }
 
     // Update is called once per frame
     void Update()
@@ -33,4 +39,8 @@ public class StopWatch : MonoBehaviour
 
       stopWatchText.text= minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + millis.ToString("00");
     }
+    void OnDisable()
+      {
+    PlayerPrefs.SetFloat("timer", timer);
+      }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class finalTimer : MonoBehaviour
 {
   private float timer;
+  private float timerReset;
   private bool completion = false;
   private float  seconds;
   private float  minutes;
@@ -14,13 +15,17 @@ public class finalTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      timer = Time.time;
           seconds = (int)(timer % 60);
           minutes = (int)(timer /60);
           millis = (int)((timer*1000)%100);
 
           finalTimerText.text= minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + millis.ToString("00");
     }
+
+    void OnEnable()
+{
+    timer  =  PlayerPrefs.GetFloat("timer");
+}
 
     // Update is called once per frame
 //     void Update()
