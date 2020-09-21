@@ -18,7 +18,7 @@ public class DoorTriggerStart : MonoBehaviour
     {
       timer += Time.deltaTime;
       if (timer >=3 && isOpened ==false){
-        Debug.Log("GitHubPushPullTest");
+        // Debug.Log("GitHubPushPullTest");
         isOpened = true;
         animator.SetBool("OpenStart", true);
       }

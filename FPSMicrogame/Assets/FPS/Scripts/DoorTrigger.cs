@@ -16,7 +16,7 @@ public class DoorTrigger : MonoBehaviour
     private void Update()
     {
       if (Enemy1 == null && isOpened ==false){
-        Debug.Log("GitHubPushPullTest");
+        // Debug.Log("GitHubPushPullTest");
         isOpened = true;
         animator.SetBool("Open1", true);
       }
