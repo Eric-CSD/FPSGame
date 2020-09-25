@@ -4,6 +4,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CharacterController), typeof(PlayerInputHandler), typeof(AudioSource))]
 public class PlayerCharacterController : MonoBehaviour
 {
+    public Transform child;
     [SerializeField] private Transform debugHitPointTransform;
     [SerializeField] private Transform hookShotTransform;
 
@@ -163,6 +164,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     void Update()
     {
+      child.transform.rotation = Quaternion.Euler (0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
       switch (state){
         default:
         case State.Normal:
