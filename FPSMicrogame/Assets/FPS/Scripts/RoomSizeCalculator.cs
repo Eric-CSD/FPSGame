@@ -17,7 +17,7 @@ public class RoomSizeCalculator : MonoBehaviour
   private float roomWidth;
 
   private float roomSize;
-  private float newRoomSize=0f;
+  public float newRoomSize=0f;
   private int roomSizeDelay=0;
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class RoomSizeCalculator : MonoBehaviour
         roomSize=roomHeight * roomDepth*roomWidth;
         if(roomSize<newRoomSize-1000 ||roomSize>newRoomSize+1000){
             roomSizeDelay+=1;
-            if (roomSizeDelay>=20){
+            if (roomSizeDelay>=10){
               newRoomSize=roomSize;
               roomSizeDelay=0;
             }
@@ -43,7 +43,7 @@ public class RoomSizeCalculator : MonoBehaviour
         if(roomSize>=newRoomSize-1000 && roomSize<=newRoomSize+1000){
           roomSizeDelay=0;
         }
-        Debug.Log("FAST: "+roomSize+"   "+"ACTUAL: "+newRoomSize);
+        // Debug.Log("FAST: "+roomSize+"   "+"ACTUAL: "+newRoomSize);
     }
 
     private void RoomHeight(){

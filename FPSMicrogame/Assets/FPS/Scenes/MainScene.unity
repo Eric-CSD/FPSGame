@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -45169,7 +45169,7 @@ GameObject:
   - component: {fileID: 2126280738}
   m_Layer: 0
   m_Name: RoomCalculator
-  m_TagString: Untagged
+  m_TagString: RoomCalculator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -45200,6 +45200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350d20cd80b1c4c5cb1b78164058af98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newRoomSize: 0
 --- !u!1001 &2129119488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47422,6 +47423,11 @@ PrefabInstance:
       propertyPath: child
       value: 
       objectReference: {fileID: 2126280737}
+    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: jumpSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: bb272c07bfb6e499886e32d4157f587d, type: 3}
     - target: {fileID: 3122855503829242450, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_StepOffset
@@ -47523,6 +47529,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: b7ef103c-6e78-41af-8322-5ac95ed05882
+--- !u!114 &2729281214152228923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729281214152228921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcff18428023d4007b3baa587e168006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2729281214152228933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
