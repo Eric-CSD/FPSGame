@@ -67,7 +67,7 @@ public class PlayerCharacterController : MonoBehaviour
     [Tooltip("Amount of footstep sounds played when moving one meter while sprinting")]
     public float footstepSFXFrequencyWhileSprinting = 1f;
     [Tooltip("Sound played for footsteps")]
-    public AudioClip footstepSFX;
+    public AudioClip[] footstepsArray;
     [Tooltip("Sound played when jumping")]
     public AudioClip jumpSFX;
     [Tooltip("Sound played when landing")]
@@ -360,7 +360,10 @@ public class PlayerCharacterController : MonoBehaviour
                 if (m_footstepDistanceCounter >= 1f / chosenFootstepSFXFrequency)
                 {
                     m_footstepDistanceCounter = 0f;
-                    audioSource.PlayOneShot(footstepSFX);
+                    //audioSource.PlayOneShot(footstepSFX1);
+                    int randFootstep = Random.Range(0, footstepsArray.Length);
+                    GetComponent<AudioSource>().clip = footstepsArray[randFootstep];
+                    GetComponent<AudioSource>().Play();
                 }
 
                 // keep track of distance traveled for footsteps sound
