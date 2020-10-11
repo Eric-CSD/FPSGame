@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 8745372878802205896}
   - component: {fileID: 555188489432107117}
   - component: {fileID: 8090847488450120274}
+  - component: {fileID: 1460213739015873623}
   m_Layer: 0
   m_Name: Weapon_Blaster
   m_TagString: Untagged
@@ -407,6 +408,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1460213739015873623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225486910712267859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcff18428023d4007b3baa587e168006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2867801751256125023
 GameObject:
   m_ObjectHideFlags: 0
