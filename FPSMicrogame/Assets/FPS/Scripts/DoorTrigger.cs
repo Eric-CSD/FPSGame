@@ -5,7 +5,7 @@ public class DoorTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject Enemy1;
     // [SerializeField] private GameObject Enemy2;
-    bool isOpened = false;
+    public bool isOpened = false;
     private Animator animator;
 
     private void Awake(){

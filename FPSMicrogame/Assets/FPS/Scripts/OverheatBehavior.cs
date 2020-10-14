@@ -23,7 +23,7 @@ public class OverheatBehavior : MonoBehaviour
     public float steamVFXEmissionRateMax = 8f;
 
     //Set gradient field to HDR
-    [GradientUsage(true)] 
+    [GradientUsage(true)]
     [Tooltip("Overheat color based on ammo ratio")]
     public Gradient overheatGradient;
     [Tooltip("The material for overheating color animation")]
@@ -102,7 +102,7 @@ public class OverheatBehavior : MonoBehaviour
                 return;
             }
 
-            m_AudioSource.volume = ammoToVolumeRatioCurve.Evaluate(1 - currentAmmoRatio);
+            m_AudioSource.volume = 0.1f;
         }
 
         m_LastAmmoRatio = currentAmmoRatio;

@@ -18,7 +18,6 @@ using System.Collections;
     g = amp;
     //get delaytime in samples
     delayTime =delay;
-    // this.Output(data, channels, amp);
 
     int writePos = this.position + delayTime;
     writePos = writePos % this.buffer.Length;

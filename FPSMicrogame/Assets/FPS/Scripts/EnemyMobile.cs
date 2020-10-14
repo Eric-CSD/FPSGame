@@ -70,7 +70,7 @@ public class EnemyMobile : MonoBehaviour
 
     void UpdateAIStateTransitions()
     {
-        // Handle transitions 
+        // Handle transitions
         switch (aiState)
         {
             case AIState.Follow:
@@ -93,7 +93,7 @@ public class EnemyMobile : MonoBehaviour
 
     void UpdateCurrentAIState()
     {
-        // Handle logic 
+        // Handle logic
         switch (aiState)
         {
             case AIState.Patrol:
@@ -106,7 +106,7 @@ public class EnemyMobile : MonoBehaviour
                 m_EnemyController.OrientWeaponsTowards(m_EnemyController.knownDetectedTarget.transform.position);
                 break;
             case AIState.Attack:
-                if (Vector3.Distance(m_EnemyController.knownDetectedTarget.transform.position, m_EnemyController.m_DetectionModule.detectionSourcePoint.position) 
+                if (Vector3.Distance(m_EnemyController.knownDetectedTarget.transform.position, m_EnemyController.m_DetectionModule.detectionSourcePoint.position)
                     >= (attackStopDistanceRatio * m_EnemyController.m_DetectionModule.attackRange))
                 {
                     m_EnemyController.SetNavDestination(m_EnemyController.knownDetectedTarget.transform.position);
@@ -132,7 +132,7 @@ public class EnemyMobile : MonoBehaviour
         {
             aiState = AIState.Follow;
         }
-        
+
         for (int i = 0; i < onDetectVFX.Length; i++)
         {
             onDetectVFX[i].Play();

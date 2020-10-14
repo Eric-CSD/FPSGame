@@ -32,6 +32,7 @@ public class RoomSizeCalculator : MonoBehaviour
         RoomHeight();
         RoomDepth();
         RoomWidth();
+
         roomSize=roomHeight * roomDepth*roomWidth;
         if(roomSize<newRoomSize-1000 ||roomSize>newRoomSize+1000){
             roomSizeDelay+=1;
@@ -43,14 +44,15 @@ public class RoomSizeCalculator : MonoBehaviour
         if(roomSize>=newRoomSize-1000 && roomSize<=newRoomSize+1000){
           roomSizeDelay=0;
         }
-        // Debug.Log("FAST: "+roomSize+"   "+"ACTUAL: "+newRoomSize);
     }
 
     private void RoomHeight(){
+
       Vector3 transformDown = transform.up * -1;
       int layerMask = 1<< 13;
       RaycastHit hitHeight;
       RaycastHit hitFloor;
+
       if  (Physics.Raycast(transform.position, transform.up, out hitHeight, Mathf.Infinity, layerMask))
       {
         roomRoof= hitHeight.distance;
