@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class DoorTrigger : MonoBehaviour
+public class DoorTriggerFinal : MonoBehaviour
 {
     [SerializeField] private GameObject Enemy1;
     [SerializeField] private GameObject Enemy2;
@@ -14,15 +14,15 @@ public class DoorTrigger : MonoBehaviour
 
     private void Awake(){
       animator = GetComponent<Animator>();
-      animator.SetBool("Open1", false);
+      animator.SetBool("Open2", false);
     }
 
     private void Update()
     {
       if (Enemy1 == null && Enemy2 == null && Enemy3 == null && Enemy4 == null && Enemy5 == null && isOpened ==false){
-        // Debug.Log("GitHubPushPullTest");
+        Debug.Log("GitHubPushPullTest");
         isOpened = true;
-        animator.SetBool("Open1", true);
+        animator.SetBool("Open2", true);
       }
 
     }
