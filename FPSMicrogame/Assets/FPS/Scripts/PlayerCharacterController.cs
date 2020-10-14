@@ -70,6 +70,7 @@ public class PlayerCharacterController : MonoBehaviour
     public AudioClip[] footstepsArray;
     [Tooltip("Sound played when jumping")]
     public AudioClip jumpSFX;
+    public AudioClip HookShotSFX;
     [Tooltip("Sound played when landing")]
     public AudioClip landSFX;
     [Tooltip("Sound played when taking damage froma fall")]
@@ -507,6 +508,7 @@ public class PlayerCharacterController : MonoBehaviour
       if (TestInputDownHookShot()){
         if  (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit raycastHit, Mathf.Infinity, layerMask)){
           //Hit Something
+          audioSource.PlayOneShot(HookShotSFX);
           debugHitPointTransform.position = raycastHit.point;
           hookshotPosition = raycastHit.point;
           hookshotSize = 0f;
@@ -526,6 +528,7 @@ public class PlayerCharacterController : MonoBehaviour
 
       if (hookshotSize >= Vector3.Distance(transform.position, hookshotPosition)){
         state = State.HookShotFlyingPlayer;
+
       }
     }
 
@@ -535,8 +538,8 @@ public class PlayerCharacterController : MonoBehaviour
 
       Vector3  hookshotDir = (hookshotPosition - transform.position).normalized;
 
-      float hookshotSpeedMin = 10f;
-      float hookshotSpeedMax = 40f;
+      float hookshotSpeedMin = 2f;
+      float hookshotSpeedMax = 5f;
       float hookshotSpeed  = Mathf.Clamp(Vector3.Distance(transform.position, hookshotPosition), hookshotSpeedMin, hookshotSpeedMax);
       float hookshotSpeedMultiplier = 4f;
 
